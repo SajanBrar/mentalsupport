@@ -63,7 +63,7 @@
             <section>
                 <ul class="links">
                     <li>
-                        <a href="findhelp.html">
+                        <a href="#">
                             <h3>Find Help</h3>
                             <p>Find professionals nearest You</p>
                         </a>
@@ -105,23 +105,47 @@
             <article class="post">
                 <header>
                     <div class="title">
-                        <h2><a href="#">The Oxford Handbook of Clinical Psychology</a></h2>
-                        <p>Edited by David H. Barlow</p>
+                        <h2><a href="contactus.html">Contact Us</a></h2>
+                        <p>Feel free to reach out to us for any inquiries or assistance.</p>
                     </div>
                     <div class="meta">
                         <!-- <time class="published" datetime="2015-11-01">September 4, 2023</time>
 										<a href="#" class="author"><span class="name">Writer_name</span><img src="images/avatar.jpg" alt="" /></a> -->
                     </div>
                 </header>
-                <span class="image featured"><img src="images/newpage.png" alt="" /></span>
-                <p>
-                    <iframe src="assets/ClinicalPsychology.pdf" width="100%" height="1000">
-                    </iframe>
-                </p>
-                <p>
-                    <i><a href="https://academic.oup.com/edited-volume/28158" target="_blank">Find the Book here.</a>
-                    </i>
-                </p>
+                <!-- <span class="image featured"><img src="images/SchizoImage.png" alt="" /></span> -->
+                <!-- Contact Us Page -->
+                <section id="contact">
+                    <div class="content">
+                        <header>
+                            <!-- <h2>Contact Us</h2> -->
+                            <!-- <p>Feel free to reach out to us for any inquiries or assistance.</p> -->
+                        </header>
+                        <form method="post" action="contact_process.php">
+                            <div class="fields">
+                                <div class="field half">
+                                    <label for="name">Name</label>
+                                    <input type="text" name="name" id="name" placeholder="Your Name" required />
+                                </div>
+                                <div class="field half">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" id="email" placeholder="Your Email" required />
+                                </div>
+                                <div class="field">
+                                    <label for="message">Message</label>
+                                    <textarea name="message" id="message" rows="6" placeholder="Your Message"
+                                        required></textarea>
+                                </div>
+                            </div>
+                            <br>
+                            <ul class="actions">
+                                <br>
+                                <li><input type="submit" value="Send Message" class="primary" /></li>
+                            </ul>
+                        </form>
+                    </div>
+                </section>
+
                 <footer>
                     <ul class="stats">
                         <!-- <li><a href="#">General</a></li> -->

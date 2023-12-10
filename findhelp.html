@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Mental Well-Being</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
+    <style>
+        p,
+        h2,
+        label,
+        ul {
+            font-family: "EB Garamond";
+            font-size: large;
+            color: black;
+        }
+    </style>
+</head>
+
+<body class="single is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <h1><a href="index.html">Mental Well-Being</a></h1>
+            <nav class="links">
+                <ul>
+                    <li><a href="findhelp.html">Find Help</a></li>
+                    <li><a href="newpage.html">Library</a></li>
+                    <li><a href="https://ol56lrbgssr.typeform.com/to/PZTgi1d3" target="_blank">Submit a Blog</a></li>
+                    <li><a href="https://ol56lrbgssr.typeform.com/to/DHocHMq0" target="_blank">MHE Form</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <nav class="main">
+                <ul>
+                    <li class="search">
+                        <a class="fa-search" href="#search">Search</a>
+                        <form id="search" method="get" action="#">
+                            <input type="text" name="query" placeholder="Search" />
+                        </form>
+                    </li>
+                    <li class="menu">
+                        <a class="fa-bars" href="#menu">Menu</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <section id="menu">
+
+            <!-- Search -->
+            <section>
+                <form class="search" method="get" action="#">
+                    <input type="text" name="query" placeholder="Search" />
+                </form>
+            </section>
+
+            <!-- Links -->
+            <section>
+                <ul class="links">
+                    <li>
+                        <a href="findhelp.html">
+                            <h3>Find Help</h3>
+                            <p>Find professionals nearest You</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="newpage.html">
+                            <h3>Library</h3>
+                            <p>Learn with Articles, Blogs, Research and more</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ol56lrbgssr.typeform.com/to/PZTgi1d3" target="_blank">
+                            <h3>Submit a Blog</h3>
+                            <p>Share your Experience</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ol56lrbgssr.typeform.com/to/DHocHMq0" target="_blank">
+                            <h3>MHE Form</h3>
+                            <p>Mental Health Evaluation Form</p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Actions -->
+            <section>
+                <ul class="actions stacked">
+                    <li><a href="contactus.html" class="button large fit">Contact Us</a></li>
+                </ul>
+            </section>
+
+        </section>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Post -->
+            <article class="post">
+                <header>
+                    <div class="title">
+                        <h2><a href="#">Find Help</a></h2>
+                        <p>Find professionals nearest You</p>
+                    </div>
+                    <div class="meta">
+                        <!-- <time class="published" datetime="2015-11-01">September 4, 2023</time>
+										<a href="#" class="author"><span class="name">Writer_name</span><img src="images/avatar.jpg" alt="" /></a> -->
+                    </div>
+                </header>
+                <!-- <span class="image featured"><img src="images/SchizoImage.png" alt="" /></span> -->
+                <section id="find-help">
+                    <div class="content">
+                        <header>
+                            <!-- <h2>Find Help</h2>
+                            <p>Please provide the following details to find available psychologists.</p> -->
+                        </header>
+                        <form id="psychologistForm" onsubmit="displayPsychiatrists(event)">
+                            <div class="fields">
+                                <div class="field">
+                                    <label for="age">Age Group</label>
+                                    <select name="age" id="age">
+                                        <option value="under_18">Under 18</option>
+                                        <option value="18_30">18-30</option>
+                                        <option value="31_50">31-50</option>
+                                        <option value="above_50">Above 50</option>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <br>
+                                    <label for="sex">Sex</label>
+                                    <select name="sex" id="sex">
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <br>
+                                    <label for="country">Country</label>
+                                    <select name="country" id="country" disabled>
+                                        <option value="india">India</option>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <br>
+                                    <label for="state">State/Province</label>
+                                    <select name="state" id="state" onchange="populateCities()">
+                                        <option value="punjab">Punjab</option>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <br>
+                                    <label for="city">City</label>
+                                    <select name="city" id="city">
+                                        <option value="faridkot">Jalandhar</option>
+                                        <!-- Other cities in Punjab can be added here -->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <br>
+
+                                <input type="submit" value="Find Psychologists" class="primary" />
+                            </div>
+                        </form>
+                        <div class="psychiatrists">
+                            <br>
+                            <br>
+                            <br>
+                            <h2>Psychologists in your Area:</h2>
+                            <ul id="psychiatrist-list">
+                                <!-- Psychiatrist details will be dynamically added here -->
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <footer>
+                    <ul class="stats">
+                        <!-- <li><a href="#">General</a></li> -->
+                        <!-- <li><a href="#" class="icon solid fa-heart"></a></li> -->
+                        <!-- <li><a href="#" class="icon solid fa-comment"></a></li> -->
+                    </ul>
+                </footer>
+            </article>
+
+        </div>
+
+        <!-- Footer -->
+        <section id="footer">
+            <ul class="icons">
+                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+                <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+            <!-- <p class="copyright">&copy; Design <a href="http://html5up.net"></a>. Images <a href="http://unsplash.com"></a>.</p> -->
+        </section>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        function populateCities() {
+            // Function to populate cities based on the selected state (Punjab in this case)
+            let cityDropdown = document.getElementById('city');
+            // Clear previous options
+            cityDropdown.innerHTML = '';
+
+            // Add cities for Punjab
+            let cities = ['Faridkot', 'Other City 1', 'Other City 2']; // Replace with actual cities
+            cities.forEach(function (city) {
+                let option = document.createElement('option');
+                option.value = city.toLowerCase().replace(/\s+/g, '_'); // Convert city name to lowercase with underscores
+                option.text = city;
+                cityDropdown.appendChild(option);
+            });
+        }
+
+        // Function to fetch and display available psychiatrists for Faridkot
+        function displayPsychiatrists(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Fetch values from form fields
+            let age = document.getElementById('age').value;
+            let sex = document.getElementById('sex').value;
+            let country = document.getElementById('country').value;
+            let state = document.getElementById('state').value;
+            let city = document.getElementById('city').value;
+
+            // Simulated data for available psychiatrists in Faridkot
+            let psychiatrists = getPsychiatristsBySelection(age, sex, country, state, city);
+
+            let psychiatristList = document.getElementById('psychiatrist-list');
+            psychiatristList.innerHTML = ''; // Clear previous list
+
+            psychiatrists.forEach(function (psychiatrist) {
+                let listItem = document.createElement('li');
+                listItem.innerHTML = `<strong>${psychiatrist.name}</strong><br>Address: ${psychiatrist.address}<br>Contact: ${psychiatrist.contact}`;
+                psychiatristList.appendChild(listItem);
+            });
+        }
+
+        // Simulated function to fetch available psychiatrists based on user selection
+        function getPsychiatristsBySelection(age, sex, country, state, city) {
+            // Replace this with your actual data fetching mechanism (e.g., API call or database query)
+            // Simulating data based on user selection
+            let psychiatrists = [
+                { name: 'Dr. A', address: 'Address 1', contact: '1234567890' },
+                { name: 'Dr. B', address: 'Address 2', contact: '9876543210' },
+                // Add more psychiatrists here based on user selection
+            ];
+
+            return psychiatrists;
+        }
+    </script>
+</body>
+
+</html>
