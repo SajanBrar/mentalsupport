@@ -10,8 +10,7 @@
     <style>
         p,
         h2,
-        label
-         {
+        label {
             font-family: "EB Garamond";
             font-size: large;
             color: black;
@@ -139,9 +138,13 @@
                                     <select name="sex" id="sex">
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
-                                        <option value="other">Other</option>
+                                        <!-- <option value="other">Other</option> -->
+                                        <option value="non_binary">Non-Binary</option>
+                                        <option value="prefer_not_to_say">Prefer not to say</option>
+                                        <!-- Add more options as needed -->
                                     </select>
                                 </div>
+
                                 <div class="field">
                                     <br>
                                     <label for="country">Country</label>
@@ -159,11 +162,32 @@
                                 <div class="field">
                                     <br>
                                     <label for="city">City</label>
-                                    <select name="city" id="city">
-                                        <option value="faridkot">Jalandhar</option>
-                                        <!-- Other cities in Punjab can be added here -->
+                                    <select name="city" id="city" onchange="displayPsychiatrists(event)">
+                                        <option value="amritsar">Amritsar</option>
+                                        <option value="barnala">Barnala</option>
+                                        <option value="bathinda">Bathinda</option>
+                                        <option value="fatehgarh_sahib">Fatehgarh Sahib</option>
+                                        <option value="fazilka">Fazilka</option>
+                                        <option value="ferozepur">Ferozepur</option>
+                                        <option value="gurdaspur">Gurdaspur</option>
+                                        <option value="hoshiarpur">Hoshiarpur</option>
+                                        <option value="jalandhar">Jalandhar</option>
+                                        <option value="kapurthala">Kapurthala</option>
+                                        <option value="ludhiana">Ludhiana</option>
+                                        <option value="mansa">Mansa</option>
+                                        <option value="moga">Moga</option>
+                                        <option value="muktsar">Muktsar</option>
+                                        <option value="pathankot">Pathankot</option>
+                                        <option value="patiala">Patiala</option>
+                                        <option value="rupnagar">Rupnagar</option>
+                                        <option value="sangrur">Sangrur</option>
+                                        <option value="sas_nagar">SAS Nagar</option>
+                                        <option value="sbs_nagar">SBS Nagar</option>
+                                        <option value="sri_muktsar_sahib">Sri Muktsar Sahib</option>
+                                        <option value="tarn_taran">Tarn Taran</option>
                                     </select>
                                 </div>
+
                             </div>
                             <div class="field">
                                 <br>
@@ -177,7 +201,7 @@
                             <br>
                             <h2>Psychologists in your Area</h2>
                             <ul id="psychiatrist-list" style="font-family: EB Garamond; font-size:large">
-                                <!-- Psychiatrist details will be dynamically added here -->
+                                <!-- Psychiatrist details will be dynamically added here based on the selected city -->
                             </ul>
                         </div>
                     </div>
@@ -215,58 +239,170 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
+        // Function to populate cities with all 23 cities of Punjab
         function populateCities() {
-            // Function to populate cities based on the selected state (Punjab in this case)
             let cityDropdown = document.getElementById('city');
-            // Clear previous options
             cityDropdown.innerHTML = '';
 
-            // Add cities for Punjab
-            let cities = ['Faridkot', 'Other City 1', 'Other City 2']; // Replace with actual cities
+            let cities = [
+                'Amritsar', 'Barnala', 'Bathinda', 'Faridkot', 'Fatehgarh Sahib', 'Fazilka',
+                'Ferozepur', 'Gurdaspur', 'Hoshiarpur', 'Jalandhar', 'Kapurthala', 'Ludhiana',
+                'Mansa', 'Moga', 'Muktsar', 'Pathankot', 'Patiala', 'Rupnagar', 'Sangrur',
+                'SAS Nagar', 'SBS Nagar', 'Sri Muktsar Sahib', 'Tarn Taran'
+            ];
+
             cities.forEach(function (city) {
                 let option = document.createElement('option');
-                option.value = city.toLowerCase().replace(/\s+/g, '_'); // Convert city name to lowercase with underscores
+                option.value = city.toLowerCase().replace(/\s+/g, '_');
                 option.text = city;
                 cityDropdown.appendChild(option);
             });
         }
 
-        // Function to fetch and display available psychiatrists for Faridkot
+        // Function to fetch and display available psychologists for selected city
         function displayPsychiatrists(event) {
-            event.preventDefault(); // Prevent form submission
+            event.preventDefault();
 
-            // Fetch values from form fields
             let age = document.getElementById('age').value;
             let sex = document.getElementById('sex').value;
             let country = document.getElementById('country').value;
             let state = document.getElementById('state').value;
             let city = document.getElementById('city').value;
-
-            // Simulated data for available psychiatrists in Faridkot
-            let psychiatrists = getPsychiatristsBySelection(age, sex, country, state, city);
-
+            
             let psychiatristList = document.getElementById('psychiatrist-list');
-            psychiatristList.innerHTML = ''; // Clear previous list
 
-            psychiatrists.forEach(function (psychiatrist) {
-                let listItem = document.createElement('li');
-                listItem.innerHTML = `<strong>${psychiatrist.name}</strong><br>Address: ${psychiatrist.address}<br>Contact: ${psychiatrist.contact}`;
-                psychiatristList.appendChild(listItem);
-            });
+            // Clear the list of psychologists whenever the city is changed
+            psychiatristList.innerHTML = '';
+
+            if (event.type === 'submit') {
+
+                // Simulated data for available psychiatrists in different cities
+                let psychiatristsByCity = {
+                    amritsar: [
+                        { name: 'Dr. A', address: 'Address A, Amritsar', contact: '1111111111' },
+                        { name: 'Dr. B', address: 'Address B, Amritsar', contact: '2222222222' },
+                        // Add more psychologists for Amritsar
+                    ],
+                    barnala: [
+                        { name: 'Dr. C', address: 'Address C, Barnala', contact: '3333333333' },
+                        { name: 'Dr. D', address: 'Address D, Barnala', contact: '4444444444' },
+                        // Add more psychologists for Barnala
+                    ],
+                    bathinda: [
+                        { name: 'Dr. E', address: 'Address E, Bathinda', contact: '5555555555' },
+                        { name: 'Dr. F', address: 'Address F, Bathinda', contact: '6666666666' },
+                        // Add more psychologists for Bathinda
+                    ],
+                    fatehgarh_sahib: [
+                        { name: 'Dr. G', address: 'Address G, Fatehgarh Sahib', contact: '7777777777' },
+                        { name: 'Dr. H', address: 'Address H, Fatehgarh Sahib', contact: '8888888888' },
+                        // Add more psychologists for Fatehgarh Sahib
+                    ],
+                    fazilka: [
+                        { name: 'Dr. I', address: 'Address I, Fazilka', contact: '9999999999' },
+                        { name: 'Dr. J', address: 'Address J, Fazilka', contact: '1010101010' },
+                        // Add more psychologists for Fazilka
+                    ],
+                    ferozepur: [
+                        { name: 'Dr. K', address: 'Address K, Ferozepur', contact: '111122223333' },
+                        { name: 'Dr. L', address: 'Address L, Ferozepur', contact: '444455556666' },
+                        // Add more psychologists for Ferozepur
+                    ],
+                    gurdaspur: [
+                        { name: 'Dr. M', address: 'Address M, Gurdaspur', contact: '777788889999' },
+                        { name: 'Dr. N', address: 'Address N, Gurdaspur', contact: '000011112222' },
+                        // Add more psychologists for Gurdaspur
+                    ],
+                    hoshiarpur: [
+                        { name: 'Dr. O', address: 'Address O, Hoshiarpur', contact: '333344445555' },
+                        { name: 'Dr. P', address: 'Address P, Hoshiarpur', contact: '666677778888' },
+                        // Add more psychologists for Hoshiarpur
+                    ],
+                    jalandhar: [
+                        { name: 'Dr. Q', address: 'Address Q, Jalandhar', contact: '999900001111' },
+                        { name: 'Dr. R', address: 'Address R, Jalandhar', contact: '222233334444' },
+                        // Add more psychologists for Jalandhar
+                    ],
+                    kapurthala: [
+                        { name: 'Dr. S', address: 'Address S, Kapurthala', contact: '555566667777' },
+                        { name: 'Dr. T', address: 'Address T, Kapurthala', contact: '888899990000' },
+                        // Add more psychologists for Kapurthala
+                    ],
+                    ludhiana: [
+                        { name: 'Dr. U', address: 'Address U, Ludhiana', contact: '111122223333' },
+                        { name: 'Dr. V', address: 'Address V, Ludhiana', contact: '444455556666' },
+                        // Add more psychologists for Ludhiana
+                    ],
+                    mansa: [
+                        { name: 'Dr. W', address: 'Address W, Mansa', contact: '777788889999' },
+                        { name: 'Dr. X', address: 'Address X, Mansa', contact: '000011112222' },
+                        // Add more psychologists for Mansa
+                    ],
+                    moga: [
+                        { name: 'Dr. Y', address: 'Address Y, Moga', contact: '333344445555' },
+                        { name: 'Dr. Z', address: 'Address Z, Moga', contact: '666677778888' },
+                        // Add more psychologists for Moga
+                    ],
+                    muktsar: [
+                        { name: 'Dr. AA', address: 'Address AA, Muktsar', contact: '999900001111' },
+                        { name: 'Dr. BB', address: 'Address BB, Muktsar', contact: '222233334444' },
+                        // Add more psychologists for Muktsar
+                    ],
+                    pathankot: [
+                        { name: 'Dr. CC', address: 'Address CC, Pathankot', contact: '555566667777' },
+                        { name: 'Dr. DD', address: 'Address DD, Pathankot', contact: '888899990000' },
+                        // Add more psychologists for Pathankot
+                    ],
+                    patiala: [
+                        { name: 'Dr. EE', address: 'Address EE, Patiala', contact: '111122223333' },
+                        { name: 'Dr. FF', address: 'Address FF, Patiala', contact: '444455556666' },
+                        // Add more psychologists for Patiala
+                    ],
+                    rupnagar: [
+                        { name: 'Dr. GG', address: 'Address GG, Rupnagar', contact: '777788889999' },
+                        { name: 'Dr. HH', address: 'Address HH, Rupnagar', contact: '000011112222' },
+                        // Add more psychologists for Rupnagar
+                    ],
+                    sangrur: [
+                        { name: 'Dr. II', address: 'Address II, Sangrur', contact: '333344445555' },
+                        { name: 'Dr. JJ', address: 'Address JJ, Sangrur', contact: '666677778888' },
+                        // Add more psychologists for Sangrur
+                    ],
+                    sas_nagar: [
+                        { name: 'Dr. KK', address: 'Address KK, SAS Nagar', contact: '999900001111' },
+                        { name: 'Dr. LL', address: 'Address LL, SAS Nagar', contact: '222233334444' },
+                        // Add more psychologists for SAS Nagar
+                    ],
+                    sbs_nagar: [
+                        { name: 'Dr. MM', address: 'Address MM, SBS Nagar', contact: '555566667777' },
+                        { name: 'Dr. NN', address: 'Address NN, SBS Nagar', contact: '888899990000' },
+                        // Add more psychologists for SBS Nagar
+                    ],
+                    sri_muktsar_sahib: [
+                        { name: 'Dr. OO', address: 'Address OO, Sri Muktsar Sahib', contact: '111122223333' },
+                        { name: 'Dr. PP', address: 'Address PP, Sri Muktsar Sahib', contact: '444455556666' },
+                        // Add more psychologists for Sri Muktsar Sahib
+                    ],
+                    tarn_taran: [
+                        { name: 'Dr. QQ', address: 'Address QQ, Tarn Taran', contact: '777788889999' },
+                        { name: 'Dr. RR', address: 'Address RR, Tarn Taran', contact: '000011112222' },
+                        // Add more psychologists for Tarn Taran
+                    ]
+                    // You can continue adding data for remaining cities similarly
+                };
+
+
+                let psychiatristList = document.getElementById('psychiatrist-list');
+                psychiatristList.innerHTML = '';
+
+                psychiatristsByCity[city].forEach(function (psychiatrist) {
+                    let listItem = document.createElement('li');
+                    listItem.innerHTML = `<strong>${psychiatrist.name}</strong><br>Address: ${psychiatrist.address}<br>Contact: ${psychiatrist.contact}`;
+                    psychiatristList.appendChild(listItem);
+                });
+            }
         }
 
-        // Simulated function to fetch available psychiatrists based on user selection
-        function getPsychiatristsBySelection(age, sex, country, state, city) {
-            // Replace this with your actual data fetching mechanism (e.g., API call or database query)
-            // Simulating data based on user selection
-            let psychiatrists = [
-                { name: 'Dr. A', address: 'Address 1', contact: '1234567890' },
-                { name: 'Dr. B', address: 'Address 2', contact: '9876543210' },
-                // Add more psychiatrists here based on user selection
-            ];
-
-            return psychiatrists;
-        }
     </script>
 </body>
 
