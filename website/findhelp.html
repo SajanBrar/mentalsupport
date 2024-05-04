@@ -30,8 +30,8 @@
                 <ul>
                     <li><a href="findhelp.html">Find Help</a></li>
                     <li><a href="newpage.html">Library</a></li>
-                    <li><a href="https://ol56lrbgssr.typeform.com/to/PZTgi1d3" target="_blank">Submit a Blog</a></li>
-                    <li><a href="https://ol56lrbgssr.typeform.com/to/DHocHMq0" target="_blank">MHE Form</a></li>
+                    <li><a href="submitablog.html" target="_blank">Submit a Blog</a></li>
+                    <li><a href="mheform.html" target="_blank">MHE Form</a></li>
                     <li><a href="contactus.html">Contact Us</a></li>
                 </ul>
             </nav>
@@ -82,7 +82,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://ol56lrbgssr.typeform.com/to/DHocHMq0" target="_blank">
+                        <a href="mheform.html" target="_blank">
                             <h3>MHE Form</h3>
                             <p>Mental Health Evaluation Form</p>
                         </a>
@@ -268,7 +268,7 @@
             let country = document.getElementById('country').value;
             let state = document.getElementById('state').value;
             let city = document.getElementById('city').value;
-            
+
             let psychiatristList = document.getElementById('psychiatrist-list');
 
             // Clear the list of psychologists whenever the city is changed
@@ -279,29 +279,91 @@
                 // Simulated data for available psychiatrists in different cities
                 let psychiatristsByCity = {
                     amritsar: [
-                        { name: 'Dr. A', address: 'Address A, Amritsar', contact: '1111111111' },
-                        { name: 'Dr. B', address: 'Address B, Amritsar', contact: '2222222222' },
-                        // Add more psychologists for Amritsar
-                    ],
-                    barnala: [
-                        { name: 'Dr. C', address: 'Address C, Barnala', contact: '3333333333' },
-                        { name: 'Dr. D', address: 'Address D, Barnala', contact: '4444444444' },
+                        {
+                            "name": "Sonia Kapur",
+                            "address": "Fortis Escorts Hospital, Majitha-Verka Bypass Road, Amritsar 143004",
+                            "contact": "+91-1835032222"
+                        },
+                        {
+                            "name": "Vandita Agarwal",
+                            "address": "Fortis Escorts Hospital, Majitha-Verka Bypass Road, Amritsar 143004",
+                            "contact": "+91-1835032222"
+                        },
+                        {
+                            "name": "Priyadarshini Pant",
+                            "address": "CARE AND COUNSELLING, 51,1st Floor, Near Anand Nagar Gurudwara, Lane Number 1, behind Celebration Mall, Phase 3, Krishna Square, Amritsar, 143001",
+                            "contact": "+91-7579132280"
+                        },
+                        {
+                            "name": "Devinder Sohal",
+                            "address": "Mind Solutions, Batala Road, 28 A, Gali Number 2, Vijay Nagar, Amritsar, Punjab 143001",
+                            "contact": "+91-9592004567"
+                        }
+                        // Add more psychologists for Amritsar: 'Address D, Barnala', contact: '4444444444' },
                         // Add more psychologists for Barnala
                     ],
-                    bathinda: [
-                        { name: 'Dr. E', address: 'Address E, Bathinda', contact: '5555555555' },
-                        { name: 'Dr. F', address: 'Address F, Bathinda', contact: '6666666666' },
-                        // Add more psychologists for Bathinda
+
+                    barnala: [
+                        {
+                            "name": "Dr. M Sri Vidhya Venkatesan",
+                            "address": "AJJNA CHAKKRRA PSYCHOLOGY CENTRE, Vinaygapuram, Coimbatore (Also serves in Barnala)",
+                            "fees": "? 500 at clinic, ? 300 online",
+                            "experience": "24 Years",
+                            "expertise": "MS - Counselling & Psychotherapy, Master of Arts In Clinical Psychology, Bachelor of Arts"
+                        },
+                        {
+                            "name": "Mr. Senthilkumar L",
+                            "address": "Life To Live Wellness, Jeevanbheema Nagar, Bangalore (Also serves in Barnala)",
+                            "fees": "? 750 at clinic, ? 850 online",
+                            "experience": "20 Years",
+                            "expertise": "Diploma In Psychology Counselling Skills, Diploma In Ayurveda, B.S IT, Diploma In Varmam Therapy"
+                        }
                     ],
-                    fatehgarh_sahib: [
-                        { name: 'Dr. G', address: 'Address G, Fatehgarh Sahib', contact: '7777777777' },
-                        { name: 'Dr. H', address: 'Address H, Fatehgarh Sahib', contact: '8888888888' },
-                        // Add more psychologists for Fatehgarh Sahib
+
+                    "bathinda": [
+                        {
+                            "name": "Dr. Mohinder Paul Sharma",
+                            "address": "Street no 6, 2, 100 Feet Road, Bathinda, Punjab 151001",
+                            "contact": "098154 73738"
+                        },
+                        {
+                            "name": "Global Wellness Bathinda",
+                            "address": "3rd Floor, Mehr Healthcare, Between Vodafone Store and Adidas Store, Mall Road, Bathinda",
+                            "contact": "+918146556084"
+                        }// Add more psychologists for Bathinda
+                    ],
+                    fatehgarh_sahib: [{
+                        "name": "Dr. Seema",
+                        "address": "Dr. Seema Homoeopathy Clinic, Near Bus Stop, Fatehgarh Sahib",
+                        "contact": "300"
+                    },
+                    {
+                        "name": "Samriddhi Clinic",
+                        "address": "Samriddhi Ayurvedic & Panchkarma Clinic, Gandhi Nagar, Fatehgarh Sahib",
+                        "contact": "800"
+                    }
                     ],
                     fazilka: [
-                        { name: 'Dr. I', address: 'Address I, Fazilka', contact: '9999999999' },
-                        { name: 'Dr. J', address: 'Address J, Fazilka', contact: '1010101010' },
-                        // Add more psychologists for Fazilka
+                        {
+                            "name": "Dr. Sayali Deo",
+                            "contact": "Fees Rs 1000"
+                        },
+                        {
+                            "name": "Dr. Divya Gupta",
+                            "contact": "Fees Rs 500"
+                        },
+                        {
+                            "name": "Dr. Vanita Malhotra",
+                            "contact": "Fees Rs 1200"
+                        },
+                        {
+                            "name": "Dr. Rajendra More",
+                            "contact": "Fees Rs 1500"
+                        },
+                        {
+                            "name": "Dr. Ravleen Kaur",
+                            "contact": "Fees Rs 999"
+                        }// Add more psychologists for Fazilka
                     ],
                     ferozepur: [
                         { name: 'Dr. K', address: 'Address K, Ferozepur', contact: '111122223333' },
