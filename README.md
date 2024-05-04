@@ -34,12 +34,12 @@ The Mental Health Support Platform is designed to address key challenges in ment
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/mental-health-support.git
+    git clone https://github.com/sajanbrar/mentalsupport.git
     ```
 
 2. Navigate to the website directory:
     ```bash
-    cd mental-health-support/website
+    cd mentalsupport/website
     ```
 
 3. Start the website server:
@@ -53,7 +53,7 @@ The Mental Health Support Platform is designed to address key challenges in ment
 
 1. Navigate to the chatbot directory:
     ```bash
-    cd mental-health-support/chatbot
+    cd mentalsupport/chatbot
     ```
 
 ## Usage
