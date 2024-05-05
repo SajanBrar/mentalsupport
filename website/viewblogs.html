@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
     <style>
-        p, h2, label {
+        p,
+        h2,
+        label {
             font-family: "EB Garamond";
             font-size: large;
             color: black;
@@ -127,18 +129,21 @@
                             <div class="fields">
                                 <div class="field half">
                                     <label for="blogTitle">Blog Title</label>
-                                    <input type="text" name="blogTitle" id="blogTitle" placeholder="Blog Title" required />
+                                    <input type="text" name="blogTitle" id="blogTitle" placeholder="Blog Title"
+                                        required />
                                 </div>
                                 <div class="field">
                                     <br>
                                     <label for="blogContent">Blog Content</label>
-                                    <textarea name="blogContent" id="blogContent" rows="6" placeholder="Blog Content" required></textarea>
+                                    <textarea name="blogContent" id="blogContent" rows="6" placeholder="Blog Content"
+                                        required></textarea>
                                 </div>
                             </div>
                             <br>
                             <ul class="actions">
                                 <br>
-                                <li><input type="submit" value="Publish Blog" class="primary" id="publishFormBtn" /></li>
+                                <li><input type="submit" value="Publish Blog" class="primary" id="publishFormBtn" />
+                                </li>
                             </ul>
                         </form>
                     </div>
@@ -273,7 +278,7 @@
         });
 
         // Initialize the dashboard
-        window.onload = function() {
+        window.onload = function () {
             fetchBlogs(); // Fetch and display blogs when the page loads
         };
     </script>

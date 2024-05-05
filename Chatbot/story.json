@@ -1,0 +1,73 @@
+{
+    "id": "d58a3d9f-382d-4456-bff3-36bb03eda98e",
+    "chatId": "6636f4747994990007f900e1",
+    "botId": "663484dc63daa50007b7c82a",
+    "date": "2024-05-05T02:52:36.096Z",
+    "score": 1,
+    "failures": 0,
+    "finished": false,
+    "attributes": {},
+    "diagram": [
+        "7d257a81-18c3-443b-992c-82c68023d22e",
+        "08913ac2-574c-497c-85f5-0076e7ff1062"
+    ],
+    "responses": [
+        {
+            "id": "796eff1f-9428-4b5c-b18f-9e6c7f7d1adc",
+            "type": "INPUT_WELCOME"
+        },
+        {
+            "id": "7d257a81-18c3-443b-992c-82c68023d22e",
+            "type": "START_POINT"
+        },
+        {
+            "id": "08913ac2-574c-497c-85f5-0076e7ff1062",
+            "type": "BOT_RESPONSE",
+            "responses": [
+                {
+                    "delay": 2000,
+                    "type": "cards",
+                    "elements": [
+                        {
+                            "imageUrl": "https://cdn.chatbot.com/attachments/6634749c7994990007f538f8/eL9PEZlD0oGiXdUU.png",
+                            "subtitle": "Welcome to Mental Wellbeing. How may I help you?",
+                            "title": "👋 Hello! I’m Amanda 😊",
+                            "buttons": [
+                                {
+                                    "title": "Find Help",
+                                    "type": "goto",
+                                    "value": "546e7b60-3b4d-4762-9ff1-6a2d7ac03045",
+                                    "id": "2be67c73-64f0-41a6-b054-285b1fff6a1d-d58a3d9f"
+                                },
+                                {
+                                    "title": "Library",
+                                    "type": "goto",
+                                    "value": "ae9d8022-dd43-47da-a50e-95d21c082174",
+                                    "id": "7d792265-dc13-4053-9ad0-888040f65cb6-d58a3d9f"
+                                },
+                                {
+                                    "title": "Submit a Blog",
+                                    "type": "goto",
+                                    "value": "ecaefd61-2502-4f19-94a0-c91b9f151581",
+                                    "id": "08fb732c-e620-419e-923f-4b31755c2a8a-d58a3d9f"
+                                },
+                                {
+                                    "title": "MHQ",
+                                    "type": "goto",
+                                    "value": "b8e3cae4-6d23-439c-b637-94858a6cb6fc",
+                                    "id": "77f3a646-71a2-4150-9c10-dc470a374c38-d58a3d9f"
+                                },
+                                {
+                                    "title": "Contact Us",
+                                    "type": "url",
+                                    "value": "https://url.chatbot.com/url2?p=eyJpZCI6IjU2N2ZhMTIwLTA2NDgtNDU5Yi05OTZjLWRhZmY3YmU1Y2ZhOS1kNThhM2Q5ZiIsImxpYyI6IjY2MzQ3NDRiMTFhNzk4MDAwN2Y5MDVjMiIsImNoYXRJZCI6IjY2MzZmNDc0Nzk5NDk5MDAwN2Y5MDBlMSIsInNpZCI6ImM2YjUxMjQwLTBiYjgtNDM2ZC1hMDIxLTIzMDcwZDgyNWQzYSIsInRpdGxlIjoiQ29udGFjdCBVcyIsInVybCI6Imh0dHBzJTNBJTJGJTJGc2FqYW5icmFyLmdpdGh1Yi5pbyUyRm1lbnRhbHN1cHBvcnQlMkZjb250YWN0dXMuaHRtbCJ9&s=94c092d7221c8af4d441c43b6ebb9669fcdecf23bd8f2ec6463cc6fdd0b6ac7d",
+                                    "id": "567fa120-0648-459b-996c-daff7be5cfa9-d58a3d9f"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
