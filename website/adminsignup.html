@@ -160,12 +160,12 @@
             event.preventDefault();
 
             // Gather form data
-            let name = document.getElementById("name").value;
+            let username = document.getElementById("name").value;
             let email = document.getElementById("email").value;
             let password = document.getElementById("password").value;
 
             // Validate form data
-            if (name === "" || email === "" || password === "") {
+            if (username === "" || email === "" || password === "") {
                 alert("Please fill all the fields");
                 return;
             }
@@ -183,7 +183,7 @@
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        name,
+                        username,
                         email,
                         password
                     })
