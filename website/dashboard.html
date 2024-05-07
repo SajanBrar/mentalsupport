@@ -19,7 +19,10 @@
                     },
                 });
                          const data=await response.json();
-                         if(!data.isAdmin){
+                         if(data.isAdmin){
+                            window.location.href="dashboard.html";
+                         }
+                         else{
                             window.location.href="findhelp.html";
                          }
             }
