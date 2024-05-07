@@ -9,6 +9,7 @@
     <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
     <script>
             const token=localStorage.getItem('token');
+            console.log(token);
             const response =fetch(`https://mental-health-application-backend.vercel.app/api/auth/user`,{
                     method: "GET",
                     headers:{
