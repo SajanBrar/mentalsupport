@@ -13,7 +13,7 @@
             const response =fetch(`https://mental-health-application-backend.vercel.app/api/auth/user`,{
                     method: "GET",
                     headers:{
-                      "Authorization": 'Bearer ${token}'
+                      "Authorization": `Bearer ${token}`
                     },
                 });
                 if(response.ok){
