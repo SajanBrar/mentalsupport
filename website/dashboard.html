@@ -9,14 +9,14 @@
     <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
     <script>
             const token=localStorage.getItem('token');
-            const response =await fetch(`https://mental-health-application-backend.vercel.app/api/auth/user`,{
+            const response =fetch(`https://mental-health-application-backend.vercel.app/api/auth/user`,{
                     method: "GET",
                     headers:{
                       "Authorization": 'Bearer ${token}'
                     },
                 });
                 if(response.ok){
-                         const data=await response.json();
+                         const data=response.json();
                          if(data.isAdmin==false){
                             window.location.href="findhelp.html";
                          }
