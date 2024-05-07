@@ -18,7 +18,7 @@
                 });
                 if(response.ok){
                          const data=await response.json();
-                         if(data.isAdmin==false){
+                         if(data.isAdmin==true){
                             window.location.href="findhelp.html";
                          }
                 }
