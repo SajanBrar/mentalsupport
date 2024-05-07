@@ -194,6 +194,7 @@
 
                 // Provide feedback to the user
                 if (data.success) {
+                    localStorage.setItem("token",data.token);
                     alert("Sign-up successful! Please log in.");
                     // Redirect to the login page
                     window.location.href = "adminlogin.html";

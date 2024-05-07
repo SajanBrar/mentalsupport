@@ -190,6 +190,7 @@
 
                 // Provide feedback to the user
                 if (data.success) {
+                    localStorage.setItem("token",data.token);
                     alert("Login successful! Redirecting to the dashboard...");
                     // Redirect to the admin dashboard page
                     window.location.href = "dashboard.html";
