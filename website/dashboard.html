@@ -19,7 +19,7 @@
                     },
                 });
                          const data=await response.json();
-                          localStorage.setItem('data',Object.keys(data));
+                          localStorage.setItem('data',JSON.stringify(data));
                          if(data.isAdmin){
                             window.location.href="dashboard.html";
                          }
