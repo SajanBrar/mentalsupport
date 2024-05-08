@@ -186,6 +186,7 @@
                   "Authorization": authToken
                 },
             });
+            if(!response.ok)window.location.href="adminlogin.html";
         }
             catch (error){
                 console.log(error);
