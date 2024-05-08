@@ -20,8 +20,7 @@
                 });
                          const data=JSON.stringify( await response.json());
                           localStorage.setItem('data',data);
-                          localStorage.setItem('value',data.isAdmin)
-                         if(data.isAdmin){
+                         if(data.Boolean(isAdmin)){
                             window.location.href="dashboard.html";
                          }
                          else{
