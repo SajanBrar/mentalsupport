@@ -21,10 +21,7 @@
                          const data=JSON.stringify( await response.json());
                           localStorage.setItem('data',data);
                           const parsed_data = JSON.parse(data);
-                         if(parsed_data.userData.isAdmin){
-                            window.location.href="dashboard.html";
-                         }
-                         else{
+                         if(!parsed_data.userData.isAdmin){
                             window.location.href="findhelp.html";
                          }
             }
