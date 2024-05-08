@@ -18,8 +18,8 @@
                       "Authorization": authToken
                     },
                 });
-                         const data=await response.json();
-                          localStorage.setItem('data',JSON.stringify(data));
+                         const data=JSON.stringify( await response.json());
+                          localStorage.setItem('data',data);
                          if(data.isAdmin){
                             window.location.href="dashboard.html";
                          }
