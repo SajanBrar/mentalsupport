@@ -239,6 +239,23 @@
 
     <!-- Handle rich text editor -->
     <script>
+        const validate=async()=>{
+            try {
+        const token=localStorage.getItem('token');
+        const authToken=`Bearer ${token}`;
+            const response =await fetch(`https://mental-health-application-backend.vercel.app/api/auth/user`,{
+                method: "GET",
+                headers:{
+                  "Authorization": authToken
+                },
+            });
+        }
+            catch (error){
+                console.log(error);
+                window.location.href="adminlogin.html";
+            }
+        }
+        validate();
         ClassicEditor
             .create(document.getElementById('richTextArticle'))
             .then(editor => {
