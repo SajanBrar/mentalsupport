@@ -19,8 +19,8 @@
                     },
                 });
                          const data=JSON.stringify( await response.json());
-                          localStorage.setItem('data',data.userData);
-                         if(data.Boolean(isAdmin)){
+                          localStorage.setItem('data',data);
+                         if(data.userData.isAdmin){
                             window.location.href="dashboard.html";
                          }
                          else{
