@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
     <script>
+            window.body.style.overflowY = "hidden";
             const validate=async()=>{
                 try {
             const token=localStorage.getItem('token');
@@ -23,6 +24,9 @@
                           const parsed_data = JSON.parse(data);
                          if(!parsed_data.userData.isAdmin){
                             window.location.href="findhelp.html";
+                         }
+                         else{
+                            window.body.style.overflowY = "visible";
                          }
             }
                 catch (error){
