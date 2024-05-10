@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
     <style>
+        body {
+            visibility: hidden;
+        }
         p,
         h2,
         label {
@@ -28,6 +31,9 @@
                 },
             });
             if(!response.ok)window.location.href="adminsignup.html";
+            else{
+                 document.body.style.visibility="visible";
+            }
         }
             catch (error){
                 console.log(error);
