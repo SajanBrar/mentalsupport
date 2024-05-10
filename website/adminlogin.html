@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Admin Login</title>
+    <title>Login</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -23,7 +23,7 @@
 
         <!-- Header -->
         <header id="header">
-            <h1><a href="index.html">Admin Login</a></h1>
+            <h1><a href="index.html">Login</a></h1>
             <nav class="links">
                 <ul>
                     <li><a href="findhelp.html">Find Help</a></li>
@@ -103,7 +103,7 @@
             <article class="post">
                 <header>
                     <div class="title">
-                        <h2>Admin Login</h2>
+                        <h2>Login</h2>
                         <p>Please enter your credentials to log in.</p>
                     </div>
                 </header>
@@ -191,7 +191,7 @@
                 // Provide feedback to the user
                 if (data.success) {
                     localStorage.setItem("token",data.token);
-                    alert("Login successful! Redirecting to the dashboard...");
+                    alert("Login successful!");
                     // Redirect to the admin dashboard page
                     window.location.href = "dashboard.html";
                 } else {
