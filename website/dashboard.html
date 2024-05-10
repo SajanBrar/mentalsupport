@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
     <script>
-           document.body.style.visibility="hidden";
+
             const validate=async()=>{
                 try {
             const token=localStorage.getItem('token');
@@ -25,7 +25,7 @@
                          if(!parsed_data.userData.isAdmin){
                             window.location.href="findhelp.html";
                          }
-                    document.body.style.visibility="visible";
+                
             }
                 catch (error){
                     console.log(error);
@@ -36,6 +36,9 @@
             
     </script>
     <style>
+        body{
+            visibility:hidden;
+        }
         p,
         h2,
         label {
