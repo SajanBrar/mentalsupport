@@ -207,7 +207,7 @@
                     },
                 });
 
-                const data = await response.json();
+                const data = JSON.stringify(await response.json());
                 console.log(data);
                 const blogsDiv = document.getElementById("blogs");
 
@@ -216,7 +216,7 @@
                     blogsDiv.innerHTML = '';
 
                     // Display blogs
-                    data.blogs.forEach(blog => {
+                    data.forEach(blog => {
                         const blogDiv = document.createElement("div");
                         blogDiv.innerHTML = `
                             <h4>${blog.title}</h4>
