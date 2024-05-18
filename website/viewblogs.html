@@ -207,7 +207,7 @@
                     },
                 });
 
-                const data = JSON.stringify(await response.json());
+                const data =await response.json();
                 const display_data=Object.values(data);
                 console.log(data);
                 const blogsDiv = document.getElementById("blogs");
