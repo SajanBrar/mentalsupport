@@ -190,7 +190,7 @@
                     display_data.forEach(message => {
                         const messageDiv = document.createElement("div");
                         messageDiv.innerHTML = `
-                            <h4>${message.name} (${message.email})</h4>
+                            <p>${message.name} (${message.email})</p>
                             <p>${message.message}</p>
                         `;
                         messagesDiv.appendChild(messageDiv);
