@@ -179,6 +179,7 @@
                 });
 
                 const data = await response.json();
+                const display_data=Object.values(data);
                 const messagesDiv = document.getElementById("messages");
 
                 if (response.ok) {
@@ -186,7 +187,7 @@
                     messagesDiv.innerHTML = '';
 
                     // Display messages
-                    data.messages.forEach(message => {
+                    data.forEach(message => {
                         const messageDiv = document.createElement("div");
                         messageDiv.innerHTML = `
                             <h4>${message.name} (${message.email})</h4>
