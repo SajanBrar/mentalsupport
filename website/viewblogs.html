@@ -244,7 +244,11 @@
         publishFormBtn.addEventListener("click", async (event) => {
             event.preventDefault();
 
-            // Gather form data
+           
+
+            // Send form data to the server
+            try {
+                 // Gather form data
             const blogTitle = document.getElementById("blogTitle").value;
             const blogContent = document.getElementById("blogContent").value;
 
@@ -253,9 +257,6 @@
                 alert("Please fill all the fields");
                 return;
             }
-
-            // Send form data to the server
-            try {
                 const response = await fetch('https://mental-health-application-backend.vercel.app/api/view/blogs/blog', {
                     method: "POST",
                     headers: {
