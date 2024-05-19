@@ -275,10 +275,8 @@
                     })
                 });
 
-                const data = await response.json();
-
                 // Provide feedback to the user
-                if (data.success) {
+                if (response.ok) {
                     alert("Blog published successfully!");
                     document.getElementById("publishForm").reset();
                 } else {
