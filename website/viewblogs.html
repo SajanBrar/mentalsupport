@@ -134,6 +134,12 @@
                                 </div>
                                 <div class="field">
                                     <br>
+                                    <label for="blogAbstract">Blog Abstract</label>
+                                    <textarea name="blogAbstract" id="blogAbstract" rows="3" placeholder="Blog Abstract"
+                                        required></textarea>
+                                </div>
+                                <div class="field">
+                                    <br>
                                     <label for="blogContent">Blog Content</label>
                                     <textarea name="blogContent" id="blogContent" rows="6" placeholder="Blog Content"
                                         required></textarea>
@@ -251,9 +257,9 @@
                  // Gather form data
             const title = document.getElementById("blogTitle").value;
             const content = document.getElementById("blogContent").value;
-            console.log(title+content);
+            const abstract = document.getElementById("blogAbstract").value;
             // Validate form data
-            if (title === "" || content === "") {
+            if (title === "" || content === ""|| abstract === "") {
                 alert("Please fill all the fields");
                 return;
             }
@@ -264,6 +270,7 @@
                     },
                     body: JSON.stringify({
                         title,
+                        abstract,
                         content
                     })
                 });
