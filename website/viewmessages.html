@@ -214,7 +214,7 @@
                         messageDiv.innerHTML = `
                             <p>${message.name} (${message.email})</p>
                             <p>${message.message}</p>
-                            <button onClick="deleteContact('${IdAsString}')">Delete</button>
+                            <button onClick="deleteContact(${IdAsString})">Delete</button>
                         `;
                         messagesDiv.appendChild(messageDiv);
                     });
