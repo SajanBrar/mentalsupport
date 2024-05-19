@@ -237,30 +237,7 @@
         // Refresh blog list on button click
         refreshBlogsBtn.addEventListener("click", fetchBlogs);
 
-        // Publish blog on button click
-        async function publishBlog(blogId) {
-            try {
-                const response = await fetch(`https://mental-health-application-backend.vercel.app/api/form/blogs/publish/${blogId}`, {
-                    method: "POST",
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
-
-                const data = await response.json();
-
-                if (response.ok) {
-                    alert("Blog published successfully!");
-                    fetchBlogs(); // Refresh blog list
-                } else {
-                    alert(data.message || "Failed to publish blog.");
-                }
-            } catch (error) {
-                console.error(error);
-                alert("An error occurred while publishing the blog. Please try again.");
-            }
-        }
-
+        
         // Publish form functionality
         const publishFormBtn = document.getElementById("publishFormBtn");
 
@@ -279,7 +256,7 @@
 
             // Send form data to the server
             try {
-                const response = await fetch('https://mental-health-application-backend.vercel.app/api/form/blogs/publish', {
+                const response = await fetch('https://mental-health-application-backend.vercel.app/api/view/blogs/blog', {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json',
