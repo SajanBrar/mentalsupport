@@ -93,7 +93,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://ol56lrbgssr.typeform.com/to/PZTgi1d3" target="_blank">
+                            <a href="submitablog.html" target="_blank">
                                 <h3>Submit a Blog</h3>
                                 <p>Share your Experience</p>
                             </a>
@@ -210,7 +210,7 @@
                         messageDiv.innerHTML = `
                             <p>${message.name} (${message.email})</p>
                             <p>${message.message}</p>
-                            <button onClick=deleteContact(${message._id})>Delete</button>
+                            <button onClick="deleteContact(${message._id})">Delete</button>
                         `;
                         messagesDiv.appendChild(messageDiv);
                     });
