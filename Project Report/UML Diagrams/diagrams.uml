@@ -1,0 +1,227 @@
+// Use Case Diagram
+
+@startuml
+!define RECTANGLE_COLOR Silver
+
+left to right direction
+actor User
+actor Admin
+actor MentalHealthProfessional
+
+rectangle "Mental Health Support Website and Application" as rect {
+    usecase "Homepage" as U1
+    usecase "Find Help" as U2
+    usecase "Library" as U3
+    usecase "Submit a Blog" as U4
+    usecase "Mental Health Evaluation" as U5
+    usecase "Admin Controls" as U6
+    usecase "AI Chatbot" as U7
+    usecase "Mobile Application" as U8
+}
+
+User --> U1
+User --> U2
+User --> U3
+User --> U4
+User --> U5
+User --> U7
+User --> U8
+
+Admin --> U1
+Admin --> U6
+Admin --> U7
+
+MentalHealthProfessional --> U5
+
+@enduml
+
+
+// Class Diagram
+
+@startuml
+
+class User {
+  +userID: int
+  +username: String
+  +password: String
+  +email: String
+  +location: String
+  +submitBlog()
+  +viewLibrary()
+  +findHelp()
+  +takeEvaluation()
+}
+
+class Admin {
+  +adminID: int
+  +username: String
+  +password: String
+  +viewBlogs()
+  +editBlog()
+  +publishBlog()
+  +viewMessages()
+  +deleteMessage()
+  +viewPsychiatrists()
+  +addPsychiatrist()
+}
+
+class MentalHealthProfessional {
+  +professionalID: int
+  +name: String
+  +specialization: String
+  +evaluateMHEForm()
+}
+
+class Blog {
+  +blogID: int
+  +title: String
+  +content: String
+  +authorID: int
+  +publish()
+}
+
+class Article {
+  +articleID: int
+  +title: String
+  +content: String
+}
+
+class MHEForm {
+  +formID: int
+  +userID: int
+  +responses: Map<String, String>
+  +evaluate()
+}
+
+class MHQForm {
+  +formID: int
+  +userID: int
+  +responses: Map<String, String>
+  +calculateMHQ()
+}
+
+class Psychiatrists {
+  +psychiatristID: int
+  +name: String
+  +contactDetails: String
+  +specialization: String
+  +availability: String
+}
+
+User -- Blog: submits >
+User -- Article: reads >
+User -- MHEForm: takes >
+User -- MHQForm: takes >
+User -- Psychiatrists: searches >
+Admin -- Blog: manages >
+Admin -- Psychiatrists: manages >
+Admin -- User: manages >
+MentalHealthProfessional -- MHEForm: evaluates >
+MHQForm -- User: calculatesMHQ >
+
+@enduml
+
+
+// Activity Diagram
+
+@startuml
+start
+
+:User visits homepage;
+:User logs in;
+:User navigates to desired section;
+
+if (Selects Find Help?) then (yes)
+  :User enters location;
+  :System shows list of psychiatrists;
+  :User contacts psychiatrist;
+else (no)
+  if (Selects Library?) then (yes)
+    :User browses articles;
+    :User reads articles;
+  else (no)
+    if (Submits a Blog?) then (yes)
+      :User writes blog;
+      :User submits blog;
+      :Admin reviews blog;
+      :Admin publishes blog;
+    else (no)
+      if (Takes MHE?) then (yes)
+        :User fills MHE form;
+        :MentalHealthProfessional evaluates;
+        :User receives feedback;
+      else (no)
+        if (Takes MHQ?) then (yes)
+          :User fills MHQ form;
+          :System calculates score;
+          :User receives MHQ score;
+        else (no)
+          :User uses AI Chatbot;
+        endif
+      endif
+    endif
+  endif
+endif
+
+stop
+@enduml
+
+
+// Sequence Diagram
+
+@startuml
+actor User
+actor Admin
+actor MentalHealthProfessional
+participant Website
+participant Database
+
+User -> Website: Visit Homepage
+User -> Website: Login
+Website -> Database: Authenticate User
+Database --> Website: Authentication Result
+User -> Website: Navigate to Find Help
+User -> Website: Enter Location
+Website -> Database: Fetch Psychiatrists
+Database --> Website: List of Psychiatrists
+Website --> User: Display Psychiatrists
+
+User -> Website: Navigate to Library
+User -> Website: Browse Articles
+Website -> Database: Fetch Articles
+Database --> Website: List of Articles
+Website --> User: Display Articles
+
+User -> Website: Submit a Blog
+User -> Website: Enter Blog Content
+Website -> Database: Save Blog Content
+Database --> Website: Confirmation
+Website --> User: Display Confirmation
+
+User -> Website: Navigate to Mental Health Evaluation
+User -> Website: Fill MHE Form
+Website -> Database: Save MHE Form
+Database --> Website: Confirmation
+Website -> MentalHealthProfessional: Notify New MHE Form
+MentalHealthProfessional -> Website: Evaluate MHE Form
+Website -> Database: Update Evaluation
+Database --> Website: Confirmation
+Website --> User: Display Feedback
+
+User -> Website: Fill MHQ Form
+Website -> Database: Save MHQ Form
+Database --> Website: Calculate MHQ Score
+Website --> User: Display MHQ Score
+
+Admin -> Website: Login
+Website -> Database: Authenticate Admin
+Database --> Website: Authentication Result
+Admin -> Website: Review Blogs
+Website -> Database: Fetch Blogs
+Database --> Website: List of Blogs
+Admin -> Website: Publish/Edit/Delete Blog
+Website -> Database: Update Blog Status
+Database --> Website: Confirmation
+
+@enduml
+
