@@ -16,7 +16,6 @@ rectangle "Mental Health Support Website and Application" as rect {
     usecase "Mental Health Evaluation" as U5
     usecase "Admin Controls" as U6
     usecase "AI Chatbot" as U7
-    usecase "Mobile Application" as U8
 }
 
 User --> U1
@@ -25,7 +24,6 @@ User --> U3
 User --> U4
 User --> U5
 User --> U7
-User --> U8
 
 Admin --> U1
 Admin --> U6
@@ -59,10 +57,10 @@ class Admin {
   +viewBlogs()
   +editBlog()
   +publishBlog()
+  +deleteBlog
   +viewMessages()
   +deleteMessage()
   +viewPsychiatrists()
-  +addPsychiatrist()
 }
 
 class MentalHealthProfessional {
