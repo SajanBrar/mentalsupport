@@ -15,8 +15,9 @@
             font-size: large;
             color: black;
         }
-        br{
+        .custom-space {
             line-height: 20px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -118,7 +119,7 @@
                 <section id="messages-management">
                     <div class="content">
                         <h3>Messages</h3>
-                        <div id="messages"></div>
+                        <div id="messages" class="custom-space"></div>
                         <br>
                         <ul class="actions">
                             <li><button id="refreshMessagesBtn" class="primary">Refresh Messages List</button></li>
@@ -218,8 +219,7 @@
                         messageDiv.innerHTML = `
                             <p>${message.name} (${message.email})</p>
                             <p>${message.message}</p>
-                            <button onClick="deleteContact('${message._id}')">Delete</button>
-                    <br>
+                            <button onClick="deleteContact('${message._id}')">Delete</button><br>
                         `;
                         messagesDiv.appendChild(messageDiv);
                     });
