@@ -116,7 +116,7 @@
                 <section id="blog-management">
                     <div class="content">
                         <h3>Blog Articles</h3>
-                        <div id="blogs"></div>
+                        <div id="blogs"></div> <br>
                         <ul class="actions">
                             <li><button id="refreshBlogsBtn" class="primary">Refresh Blog List</button></li>
                         </ul>
@@ -251,7 +251,7 @@
                             <h4>${blog.heading}</h4>
                             <p>${blog.abstract}</p>
                             <p>${blog.article}</p>
-                            <button onClick="deleteBlog('${blog._id}')">Delete</button>
+                            <button onClick="deleteBlog('${blog._id}')">Delete</button><br>
                         `;
                         blogsDiv.appendChild(blogDiv);
                     });
