@@ -20,6 +20,46 @@
         }
     </style>
     <script>
+        // Function to fetch and display blogs
+        async function fetchBlogs() {
+            try {
+                const token=localStorage.getItem('token');
+                const authToken=`Bearer ${token}`;
+                const response = await fetch('https://mental-health-application-backend.vercel.app/view/blogs/blog', {
+                    method: "GET",
+                    headers: {
+                        'Content-Type': 'application/json',
+                        "Authorization": authToken
+                    },
+                });
+
+                const data =await response.json();
+                const display_data=Object.values(data);
+                const blogsDiv = document.getElementById("blogs");
+
+                if (response.ok) {
+                    // Clear current blogs
+                    blogsDiv.innerHTML = '';
+
+                    // Display blogs
+                    display_data.forEach(blog => {
+                        const blogDiv = document.createElement("div");
+                        blogDiv.innerHTML = `
+                            <h4>${blog.heading}</h4>
+                            <p>${blog.abstract}</p>
+                            <p>${blog.article}</p>
+                        `;
+                        blogsDiv.appendChild(blogDiv);
+                    });
+                } else {
+                    alert(data.message || "Failed to fetch blogs.");
+                }
+            } catch (error) {
+                console.error(error);
+                alert("An error occurred while fetching blogs. Please try again.");
+            }
+        }
+
         const validate = async () => {
             try {
                 const token = localStorage.getItem('token');
@@ -41,6 +81,10 @@
             }
         }
         validate();
+         // Initialize the blogs page
+         window.onload = function () {
+            fetchBlogs(); // Fetch and display blogs when the page loads
+        };
     </script>
 </head>
 
