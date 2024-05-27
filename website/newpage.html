@@ -45,9 +45,9 @@
                     display_data.forEach(blog => {
                         const blogDiv = document.createElement("div");
                         blogDiv.innerHTML = `
-                            <h4>${blog.heading}</h4>
+                            <h4>${blog.title}</h4>
                             <p>${blog.abstract}</p>
-                            <p>${blog.article}</p>
+                            <p>${blog.content}</p>
                         `;
                         blogsDiv.appendChild(blogDiv);
                     });
