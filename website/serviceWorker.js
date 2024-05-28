@@ -18,7 +18,10 @@ const assets = [
     "/viewblogs.html",
     "/viewmessages.html",
     "/viewpsychiatrists.html",
-
+    "/PsychologistsProfile.html",
+    "/rachna.jpg",
+    "/raman.jpg",
+    "/sahebjeet.jpg",
     "/android/android-launchericon-48-48.png",
     "/android/android-launchericon-72-72.png",
     "/android/android-launchericon-96-96.png",
